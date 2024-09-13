@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import UserIcon from '../assets/user-icon.png';
-import CartIcon from '../assets/cart-icon.png';
-import SearchIcon from '../assets/search-icon.png';
-import SignIn from './SignIn';
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import SignIn from "./SignIn";
+import images from "../images";
+
+import Search from "./Search/Search";
 
 const Header = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
@@ -14,40 +14,34 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-[92%] top-[2%] left-[7%] mb-4">
-      <div className="flex items-center justify-between bg-white p-4 rounded-xl shadow-lg">
+    <div style={{ boxShadow: "0px 4px 14.4px 0px" }} className="w-full mb-1">
+      <div className="flex items-center justify-between bg-white p-4 ">
         {/* Left: Timer and Location */}
         <div>
-          <p className="font-bold text-lg">8 minutes</p>
-          <p className="font-medium text-base">
-            <span className="font-bold">HOME</span> - Block D / Flat 901...
+          <p className="font-bold font-inter text-[1.5rem]">8 minutes</p>
+          <p className="font-medium text-[1.1rem] font-inter mt-1 w-[300px] cutoff-text-one">
+            <span className="font-bold ">HOME</span> - Block D / Flat 90 fdjijf
+            jf djfids ifjdijfid
           </p>
         </div>
 
         {/* Center: Search Input */}
-        <div className="flex items-center">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder='Search "Chips"'
-              className="rounded-full pl-10 pr-4 py-2 bg-gray-100 w-[300px] focus:outline-none"
-            />
-            <img
-              src={SearchIcon}
-              alt="Search Icon"
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
-            />
-          </div>
+        <div className="w-[50%]">
+          <Search placeholder={`Search "Chips"`} />
         </div>
 
         {/* Right: User Icon and Cart Button */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-4">
           <div onClick={handleUserIconClick} className="cursor-pointer">
-            <img src={UserIcon} alt="User Icon" className="w-8 h-8" />
+            <img
+              src={images.usericon}
+              alt="User Icon"
+              className="w-[30px] h-8"
+            />
           </div>
 
-          <button className="px-3 py-3 bg-green-700 text-white rounded-full flex items-center shadow-md hover:bg-green-600">
-            <img src={CartIcon} alt="Cart Icon" className="w-6 h-6 mr-2" />
+          <button className="font-inter font-semibold px-5 text-[1rem] py-3 bg-[#217229] text-white rounded-full flex items-center gap-2 shadow-md hover:bg-green-600">
+            <img src={images.carticon} alt="Cart Icon" className="w-[25px]" />
             My Cart
           </button>
         </div>

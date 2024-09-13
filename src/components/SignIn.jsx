@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import icons from '../assets/icons'; // Adjust the path based on your project structure
+import React, { useState } from "react";
+import icons from "../assets/icons"; // Adjust the path based on your project structure
 
 const SignIn = ({ onClose }) => {
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   const handlePhoneNumberChange = (e) => {
@@ -44,7 +44,9 @@ const SignIn = ({ onClose }) => {
 
         {/* Phone Number Input */}
         <div className="flex items-center bg-gray-100 rounded-lg p-2 mb-4">
-          <span className="bg-gray-200 rounded-lg px-4 py-2 text-gray-700 font-semibold">+91</span>
+          <span className="bg-gray-200 rounded-lg px-4 py-2 text-gray-700 font-semibold">
+            +91
+          </span>
           <input
             type="tel"
             value={phoneNumber}
@@ -63,14 +65,15 @@ const SignIn = ({ onClose }) => {
             className="mt-1"
           />
           <p className="text-sm text-gray-500">
-            By continuing, you accept our{' '}
+            By continuing, you accept our{" "}
             <a href="/terms" className="underline text-blue-500">
               Terms and Conditions
-            </a>{' '}
-            and{' '}
+            </a>{" "}
+            and{" "}
             <a href="/privacy" className="underline text-blue-500">
               Privacy Policy
-            </a>.
+            </a>
+            .
           </p>
         </div>
 
@@ -79,8 +82,8 @@ const SignIn = ({ onClose }) => {
           disabled={!phoneNumber || !acceptedTerms}
           className={`w-full py-3 rounded-lg font-semibold text-white transition-all duration-300 ${
             phoneNumber && acceptedTerms
-              ? 'bg-green-600 hover:bg-green-700'
-              : 'bg-gray-400 cursor-not-allowed'
+              ? "bg-green-600 hover:bg-green-700"
+              : "bg-gray-400 cursor-not-allowed"
           }`}
         >
           Sign In
