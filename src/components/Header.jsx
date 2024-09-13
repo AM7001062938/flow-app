@@ -14,7 +14,10 @@ const Header = () => {
   };
 
   return (
-    <div style={{ boxShadow: "0px 4px 14.4px 0px" }} className="w-full mb-1">
+    <div
+      style={{ boxShadow: "0px 4px 10px 0px rgba(0, 0, 0, 0.14)" }}
+      className="w-full mb-1"
+    >
       <div className="flex items-center justify-between bg-white p-4 ">
         {/* Left: Timer and Location */}
         <div>

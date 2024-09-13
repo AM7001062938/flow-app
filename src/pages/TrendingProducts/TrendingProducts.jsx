@@ -5,8 +5,9 @@ import FrequentBuysProductCard from "../../components/FrequentBuysProductCard/Fr
 
 function TrendingProducts() {
   const trending = Array.from({ length: 20 }, (_, index) => index);
+
   return (
-    <div className="bg-[#F5F2F7] px-10 py-10 h-full">
+    <div className={`bg-[#F5F2F7] px-10 py-10 h-full `}>
       {/* Title and filters */}
       <div className="flex justify-between items-center">
         <div className="font-poppinsSemiBold text-[1rem]">
@@ -36,7 +37,7 @@ function TrendingProducts() {
         </div>
       </div>
       {/* Content */}
-      <div className="mt-7 w-[95%] mx-auto max-h-[70vh] overflow-y-scroll">
+      <div className={`mt-7 w-[95%] mx-auto max-h-[70vh] overflow-y-scroll `}>
         <div className="flex flex-wrap gap-8 justify-start">
           {trending.map((product, idx) => (
             <div className="basis-[14rem]">

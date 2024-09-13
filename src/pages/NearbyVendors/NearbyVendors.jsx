@@ -5,8 +5,9 @@ import VendorCard from "../../components/VendorCard/VendorCard";
 
 function NearbyVendors() {
   const vendors = Array.from({ length: 20 }, (_, index) => index);
+
   return (
-    <div className="h-full pt-10 w-[90%] mx-auto">
+    <div className={`h-full pt-10 w-[90%] mx-auto `}>
       {/* Title and filters */}
       <div className="flex justify-between items-center">
         <div className="font-poppinsSemiBold text-[1rem]">Vendors Near Me</div>
