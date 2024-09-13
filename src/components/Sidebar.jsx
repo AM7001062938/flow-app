@@ -1,15 +1,13 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 
-import HelpCircleIcon from "../assets/help-circle-icon.png";
-import ExitIcon from "../assets/exit-icon.png";
 import images from "../images";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleIconClick = (iconName) => {
-    dispatch({ type: "SET_ACTIVE_ICON", payload: iconName });
+  const handleIconClick = (route) => {
+    return navigate(route);
   };
 
   return (
@@ -18,7 +16,7 @@ const Sidebar = () => {
       <div className="flex flex-col items-center mt-9">
         <div
           className="cursor-pointer hover:opacity-100 hover:scale-105 active:scale-95 transition duration-200"
-          onClick={() => handleIconClick("trending-topic")}
+          onClick={() => handleIconClick("/")}
           style={{ width: "35px", height: "35px" }}
         >
           <img src={images.fire} alt="Trending Topic" className="w-[30px]" />
@@ -30,7 +28,7 @@ const Sidebar = () => {
         <div
           className="cursor-pointer hover:opacity-100 hover:scale-105 active:scale-95 transition duration-200"
           style={{ width: "20px", height: "20px" }}
-          onClick={() => handleIconClick("element")}
+          onClick={() => handleIconClick("/")}
         >
           <img src={images.home} alt="Element" className="w-[30px]" />
         </div>

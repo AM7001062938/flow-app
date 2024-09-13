@@ -1,6 +1,7 @@
 import React from "react";
 import SuperMarketCard from "../SuperMarketCard/SuperMarketCard";
 import images from "../../images";
+import { Link } from "react-router-dom";
 
 const supermarkets = [
   { icon: images.agile, name: "Agile Store", dur: "12 mins" },
@@ -32,9 +33,11 @@ function SuperMarkets() {
         <div className="font-poppinsSemiBold text-[1.1rem]">
           Supermarkets Near You
         </div>
-        <button className="text-[#217229] font-poppinsSemiBold text-[1.1rem]">
-          See All
-        </button>
+        <Link to={"nearby-vendors"}>
+          <button className="text-[#217229] font-poppinsSemiBold text-[1.1rem]">
+            See All
+          </button>
+        </Link>
       </div>
       <div className="flex flex-wrap gap-6 justify-center xl:gap-3 xl:justify-start mt-5 ">
         {supermarkets.map((market, idx) => (

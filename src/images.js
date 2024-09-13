@@ -12,6 +12,9 @@ import twitter from "./assets/twitter.svg";
 import usericon from "./assets/usericon.svg";
 import carticon from "./assets/carticon.svg";
 import lens from "./assets/lens.svg";
+import filter from "./assets/filter.svg";
+import openshop from "./assets/openshop.svg";
+
 import sampleLays from "./assets/dummy/sampleLays.svg";
 import agile from "./assets/dummy/agile.svg";
 import thegreen from "./assets/dummy/thegreen.svg";
@@ -53,6 +56,8 @@ const images = {
   help,
   security,
   logout,
+  filter,
+  openshop,
 };
 
 export default images;
