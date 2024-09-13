@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 const AppLayout = lazy(() => import("./Layouts/AppLayout/AppLayout"));
 const Home = lazy(() => import("./pages/Home"));
 const NearbyVendors = lazy(() => import("./pages/NearbyVendors/NearbyVendors"));
+const TrendingProducts = lazy(() =>
+  import("./pages/TrendingProducts/TrendingProducts")
+);
 
 const App = () => {
   return (
@@ -17,6 +20,10 @@ const App = () => {
               <Route path="/" element={<AppLayout />}>
                 <Route index element={<Home />} />
                 <Route path="nearby-vendors" element={<NearbyVendors />} />
+                <Route
+                  path="trending-products"
+                  element={<TrendingProducts />}
+                />
               </Route>
               {/* Add more routes as needed */}
             </Routes>

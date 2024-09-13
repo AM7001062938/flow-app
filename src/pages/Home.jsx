@@ -7,6 +7,7 @@ import SuperMarkets from "../components/SuperMarkets/SuperMarkets";
 
 import Offers from "../components/Offers/Offers";
 import Footer from "../components/Footer/Footer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -17,9 +18,11 @@ const Home = () => {
         </div>
         <div className="mt-8 bg-[#0C362A] pt-12">
           <FrequentBuys />
-          <div className="bg-[#071F18] text-white font-inter font-semibold text-[1rem] mt-5 p-3 text-center">
-            See More
-          </div>
+          <Link to={"trending-products"}>
+            <button className="bg-[#071F18] text-white font-inter font-semibold text-[1rem] mt-5 p-3 text-center w-full">
+              See More
+            </button>
+          </Link>
         </div>
         <div className="mt-5 p-2">
           <SuperMarkets />

@@ -1,12 +1,18 @@
 import React from "react";
 import images from "../../images";
 
-function FrequentBuysProductCard() {
+function FrequentBuysProductCard({ showOffer = false }) {
   return (
     <div className="bg-white rounded-xl pt-1 ">
       <div className="px-1">
-        <div className="flex items-center justify-center rounded-xl bg-[#EBEEF2] p-2 border">
+        <div className="flex items-center justify-center rounded-xl bg-[#EBEEF2] p-2 border relative">
           <img src={images.sampleLays} className="w-[100px]" />
+          {/* offer sticker */}
+          {showOffer && (
+            <div className="font-poppinsLight text-[0.88rem] absolute bottom-1 right-1 bg-white px-3 py-1 rounded-3xl">
+              12% OFF
+            </div>
+          )}
         </div>
         <div className="font-poppinsMedium text-[0.825rem] cutoff-text mx-3 mt-2">
           Oman Chili Potato Chips Spicy Indian Flavour fidji
