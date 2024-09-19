@@ -31,19 +31,24 @@ const SignIn = ({ onClose }) => {
             To Sign in, enter your mobile number
           </h2>
 
-          {/* Snapshot Background */}
+          {/* Banner Background */}
           <div
-            className="w-full h-24 rounded-xl mb-6 relative flex justify-center items-center bg-cover bg-center"
+            className="w-full h-32 rounded-xl mb-6 relative flex justify-center items-center bg-cover bg-center"
             style={{
-              backgroundImage: `url(${icons.HomepageSnapshot})`,
+              backgroundImage: `url(${icons.BannerImage})`, // Use the banner image here
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
             }}
           >
             {/* Optional text overlay on the snapshot if required */}
+            <div className="absolute inset-0 bg-black bg-opacity-30 flex justify-center items-center">
+              <p className="text-white text-lg font-semibold">Welcome to Our App</p>
+            </div>
           </div>
         </div>
 
         {/* Phone Number Input */}
-        <div className="flex items-center bg-gray-100 rounded-lg p-2 mb-4">
+        <div className="flex items-center bg-gray-100 rounded-lg p-2 mb-4 border border-gray-300">
           <span className="bg-gray-200 rounded-lg px-4 py-2 text-gray-700 font-semibold">
             +91
           </span>
@@ -51,8 +56,8 @@ const SignIn = ({ onClose }) => {
             type="tel"
             value={phoneNumber}
             onChange={handlePhoneNumberChange}
-            placeholder="9999999999"
-            className="flex-grow pl-2 py-2 bg-transparent focus:outline-none"
+            placeholder="Enter your mobile number"
+            className="flex-grow pl-2 py-2 bg-transparent focus:outline-none text-gray-900"
           />
         </div>
 

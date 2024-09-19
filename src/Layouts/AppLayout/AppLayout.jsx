@@ -1,27 +1,22 @@
 import React from "react";
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
-
 import { Outlet } from "react-router-dom";
 
-function AppLayout() {
+function AppLayout({ setIsCartOpen }) {
   return (
     <div className="flex h-screen overflow-hidden ">
-      {/* Left Sidebar */}
-      <nav className="">
+      <nav>
         <Sidebar />
       </nav>
 
-      {/* Right Side */}
       <div className="flex-grow flex flex-col overflow-hidden">
-        {/* Top Header */}
-        <header className="">
-          <Header />
+        <header>
+          <Header setIsCartOpen={setIsCartOpen} />
         </header>
 
-        {/* Scrollable Content */}
-        <div className="flex-grow overflow-y-scroll w-full mx-auto ">
-          <Outlet />
+        <div className="flex-grow overflow-y-scroll w-full mx-auto">
+          <Outlet /> {/* This renders the child routes, including Categories */}
         </div>
       </div>
     </div>

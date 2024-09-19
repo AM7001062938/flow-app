@@ -28,6 +28,7 @@ import shop from "./assets/navbar/shop.svg";
 import help from "./assets/navbar/help.svg";
 import security from "./assets/navbar/security.svg";
 import logout from "./assets/navbar/logout.svg";
+import suggestedproducts from "./assets/sp.svg";
 
 const images = {
   expand,
@@ -58,6 +59,7 @@ const images = {
   logout,
   filter,
   openshop,
+  suggestedproducts,
 };
 
 export default images;

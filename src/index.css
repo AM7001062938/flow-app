@@ -25,6 +25,22 @@
   font-family: poppinsSemiBold;
   src: url("./assets/fonts/Poppins-SemiBold.ttf");
 }
+.category-card {
+  @apply p-4 border border-gray-300 rounded-lg shadow-md;
+}
+
+.category-card-image {
+  @apply w-full h-32;
+}
+
+.category-card-content {
+  @apply mt-2;
+}
+
+.category-card img {
+  @apply w-full h-full object-cover;
+}
+
 .cutoff-text {
   --max-lines: 2;
   display: -webkit-box;
@@ -34,6 +50,27 @@
 }
 .cutoff-text-one {
   --max-lines: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--max-lines);
+}
+.product-card {
+  @apply p-4 border border-gray-300 rounded-lg shadow-md;
+  width: 12rem; /* Adjust the width */
+  height: 16rem; /* Adjust the height */
+}
+
+.product-card img {
+  @apply w-full h-2/3 object-cover; /* Adjust height to fit card */
+}
+
+.product-card-content {
+  @apply mt-2;
+}
+
+.cutoff-text {
+  --max-lines: 2;
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;

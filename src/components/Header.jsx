@@ -2,28 +2,30 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import SignIn from "./SignIn";
 import images from "../images";
-
 import Search from "./Search/Search";
+import CartWindow from "./CartWindow"; // Create a new component for the cart
 
 const Header = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
   const [showSignIn, setShowSignIn] = useState(false);
+  const [showCart, setShowCart] = useState(false); // State to handle cart visibility
 
   const handleUserIconClick = () => {
     setShowSignIn(true);
   };
 
+  const handleCartClick = () => {
+    setShowCart(true); // Open the cart window when "My Cart" is clicked
+  };
+
   return (
-    <div
-      style={{ boxShadow: "0px 4px 10px 0px rgba(0, 0, 0, 0.14)" }}
-      className="w-full mb-1"
-    >
+    <div style={{ boxShadow: "0px 4px 14.4px 0px" }} className="w-full mb-1">
       <div className="flex items-center justify-between bg-white p-4 ">
         {/* Left: Timer and Location */}
         <div>
           <p className="font-bold font-inter text-[1.5rem]">8 minutes</p>
           <p className="font-medium text-[1.1rem] font-inter mt-1 w-[300px] cutoff-text-one">
-            <span className="font-bold ">HOME</span> - Block D / Flat 90 fdjijf
+            <span className="font-bold">HOME</span> - Block D / Flat 90 fdjijf
             jf djfids ifjdijfid
           </p>
         </div>
@@ -43,7 +45,10 @@ const Header = () => {
             />
           </div>
 
-          <button className="font-inter font-semibold px-5 text-[1rem] py-3 bg-[#217229] text-white rounded-full flex items-center gap-2 shadow-md hover:bg-green-600">
+          <button
+            onClick={handleCartClick} // Handle cart click
+            className="font-inter font-semibold px-5 text-[1rem] py-3 bg-[#217229] text-white rounded-full flex items-center gap-2 shadow-md hover:bg-green-600"
+          >
             <img src={images.carticon} alt="Cart Icon" className="w-[25px]" />
             My Cart
           </button>
@@ -51,6 +56,9 @@ const Header = () => {
 
         {/* SignIn Modal */}
         {showSignIn && <SignIn onClose={() => setShowSignIn(false)} />}
+
+        {/* Cart Side Window */}
+        {showCart && <CartWindow onClose={() => setShowCart(false)} />} {/* Add cart window */}
       </div>
     </div>
   );
