@@ -9,6 +9,7 @@ const NearbyVendors = lazy(() => import("./pages/NearbyVendors/NearbyVendors"));
 const TrendingProducts = lazy(() => import("./pages/TrendingProducts/TrendingProducts"));
 const Categories = lazy(() => import("./components/Categories"));
 const ProductsPage = lazy(() => import("./components/ProductsPage"));
+ 
 
 const App = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
