@@ -1,5 +1,5 @@
 {
-   "homepage": "https://am7001062938/github.io/flow-app",
+   "homepage": "https://AM7001062938/github.io/flow-app",
 
   "name": "flow-app",
    
@@ -80,8 +80,8 @@
    
    "predeploy": "npm run build",
 
-   
-   "deploy": "gh-pages -d dist",
+
+  "deploy": "gh-pages -d build",
      
 
   "start": "react-scripts start",
